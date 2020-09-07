@@ -2,20 +2,21 @@ using System;
 
 namespace TelCo.ColorCoder
 {
-    partial class Program
+    class ColorToNum
     {
         /// <summary>
         /// Given the two colors the function returns the pair number corresponding to them
         /// </summary>
         /// <param name="pair">Color pair with major and minor color</param>
         /// <returns></returns>
-        private static int GetPairNumberFromColor(ColorPair pair)
+        internal static int GetPairNumberFromColor(ColorMap.ColorPair pair)
         {
+            ColorMap obj = new ColorMap();
             // Find the major color in the array and get the index
             int majorIndex = -1;
-            for (int i = 0; i < colorMapMajor.Length; i++)
+            for (int i = 0; i < obj.ColorMapMajor.Length ; i++)
             {
-                if (colorMapMajor[i] == pair.majorColor)
+                if (obj.ColorMapMajor[i] == pair.majorColor)
                 {
                     majorIndex = i;
                     break;
@@ -24,9 +25,9 @@ namespace TelCo.ColorCoder
 
             // Find the minor color in the array and get the index
             int minorIndex = -1;
-            for (int i = 0; i < colorMapMinor.Length; i++)
+            for (int i = 0; i < obj.ColorMapMinor.Length; i++)
             {
-                if (colorMapMinor[i] == pair.minorColor)
+                if (obj.ColorMapMinor[i] == pair.minorColor)
                 {
                     minorIndex = i;
                     break;
@@ -41,13 +42,11 @@ namespace TelCo.ColorCoder
 
             // Compute pair number and Return  
             // (Note: +1 in compute is because pair number is 1 based, not zero)
-            return (majorIndex * colorMapMinor.Length) + (minorIndex + 1);
+            return (majorIndex * obj.ColorMapMinor.Length) + (minorIndex + 1);
         }
         /// <summary>
         /// Test code for the class
         /// </summary>
         /// <param name="args"></param>
     }
-    
-
 }
