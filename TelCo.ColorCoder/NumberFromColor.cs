@@ -44,9 +44,5 @@ namespace TelCo.ColorCoder
             // (Note: +1 in compute is because pair number is 1 based, not zero)
             return (majorIndex * obj.ColorMapMinor.Length) + (minorIndex + 1);
         }
-        /// <summary>
-        /// Test code for the class
-        /// </summary>
-        /// <param name="args"></param>
     }
 }
