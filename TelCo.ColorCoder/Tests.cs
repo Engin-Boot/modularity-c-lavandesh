@@ -9,6 +9,8 @@ namespace TelCo.ColorCoder
     private static void Main(string[] args)
         {
             int pairNumber = 4;
+            print manual = new print ();
+            //Console.WriteLine(manual.ToString());
             ColorMap.ColorPair testPair1 = NumToColor.GetColorFromPairNumber(pairNumber);
             Console.WriteLine("[In]Pair Number: {0},[Out] Colors: {1}\n", pairNumber, testPair1);
             Debug.Assert(testPair1.majorColor == Color.White);
